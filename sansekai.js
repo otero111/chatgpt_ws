@@ -71,13 +71,9 @@ module.exports = sansekai = async (client, m, chatUpdate, store) => {
                     const openai = new OpenAIApi(configuration);
 
                     let prompt_template =
-                        "I am artificial intelligence " +
+                        "Hola, soy " +
                         BOT_NAME +
-                        " developed by a Harshit Sharma.\n\nHuman: Hi. How are you?\n" +
-                        BOT_NAME +
-                        ": I'm well. How can I help you?\nHuman: " +
-                        budy +
-                        "\n" +
+                        " En qué puedo ayudarte?\n" +
                         BOT_NAME +
                         ": ";
 
@@ -93,7 +89,7 @@ module.exports = sansekai = async (client, m, chatUpdate, store) => {
                     m.reply(`${response.data.choices[0].text}\n\n`)
                 } catch (err) {
                     console.log(err)
-                    m.reply('I am getting API Update right now. Please hold on anc check back in a while.')
+                    m.reply('Disculpe, me repite la pregunta?')
                 }
             }
         }
@@ -122,7 +118,7 @@ module.exports = sansekai = async (client, m, chatUpdate, store) => {
                             m.reply(`${response.data.choices[0].text}\n\n`)
                         } catch (err) {
                             console.log(err)
-                            m.reply('Maaf, sepertinya ada yang error')
+                            m.reply('Uff, Error')
                         }
                         break
                     default: {
